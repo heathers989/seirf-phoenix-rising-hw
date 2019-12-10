@@ -10,8 +10,15 @@ header {
 h3{
     font-family: 'Josefin Sans', sans-serif;
     color: cadetblue;
+    font-size: 20px;
 }
 
 img {
     border: 5px solid white;
+}
+
+.third {
+    width: 32%;
+    padding: 5px;
+    float: left;
 }
