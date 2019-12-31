@@ -1,41 +1,118 @@
+//create variables for the costs of tools
 let scissorCost = 5;
 let pushMowerCost = 25;
 let batteryMowerCost = 250;
 let studentsCost = 500;
 
+//create object for the items in gameplay
 const gamePlay = {
     tool: ["teeth"],
     daysWorked: 0,
     moneyEarned: 0
 }
 
-for (gamePlay.daysWorked = 0; gamePlay.moneyEarned <= 100; gamePlay.daysWorked++, gamePlay.moneyEarned++ ){
+/*create function to determine how much money is earned while landscaping based on last tool added (may later edit to 
+a tool.contains evaluation if time permits and the functionality can be worked out) */
+const keepLandscaping = () => {
+    if (gamePlay.tool[gamePlay.tool.length-1] === "teeth"){
+        gamePlay.moneyEarned++;
+    } else if(gamePlay.tool[gamePlay.tool.length-1] === "rusty scissors"){
+        gamePlay.moneyEarned+=5;
+    } else if(gamePlay.tool[gamePlay.tool.length-1] === "push mower"){
+        gamePlay.moneyEarned+=50;
+    } else if(gamePlay.tool[gamePlay.tool.length-1] === "battery powered mower"){
+        gamePlay.moneyEarned+=100;
+    } else if(gamePlay.tool[gamePlay.tool.length-1] === "team of starving students"){
+        gamePlay.moneyEarned+=250;  
+}
+}
+
+//create a function to add new tools and a for loop to increment the days worked and money earned
+const addTools = () =>{
+for (gamePlay.daysWorked; gamePlay.moneyEarned <= 1000; gamePlay.daysWorked++, gamePlay.moneyEarned++ ){
   if (gamePlay.moneyEarned === 5) {
-      let purchase = prompt(" You've earned $" + gamePlay.moneyEarned + '! \n Do you want to buy rusty scissors for $' + scissorCost + 
+      let purchase = prompt(" You've worked " + gamePlay.daysWorked +  " days and earned $" + gamePlay.moneyEarned + '! \n Do you want to buy rusty scissors for $' + scissorCost + 
       '? Enter yes or no.');
     if (purchase === "yes") { gamePlay.tool.push("rusty scissors"); gamePlay.moneyEarned -= scissorCost;
     alert("Thanks for your purchase! Your remaining money is $" + gamePlay.moneyEarned);
-    break; } 
-    // else if (purchase === "no") {
-    // continue;
-    // } if (gamePlay.moneyEarned === 25) {
-    //   let purchase = prompt(" You've earned $" + gamePlay.moneyEarned + 
-    //   '! Do you want to buy \n rusty scissors for ' + scissorCost + '? or \n a push mower for ' 
-    //   + pushMowerCost + '?');
-    // if (purchase === "rusty scissors") { gamePlay.tool.push("rusty scissors"); 
-    // gamePlay.moneyEarned -= scissorCost;
-    // alert("Thanks for your purchase! Your remaining money is $" + gamePlay.moneyEarned);
-    // break; 
-    // } else if (purchase === "push mower") { gamePlay.tool.push("push mower"); 
-    // gamePlay.moneyEarned -= pushMowerCost;
-    // alert("Thanks for your purchase! Your remaining money is $" + gamePlay.moneyEarned);
-    // break; 
-    // }
-    
-    /* else if (purchase === "no") {
-        continue; */
-    } 
-}
+    keepLandscaping(); 
+    }else if (purchase === "no") {
+        keepLandscaping();
+     } 
+    }
+    if (gamePlay.moneyEarned === 25) {
+        let purchase = prompt(" You've worked " + gamePlay.daysWorked +  " days and earned $" + gamePlay.moneyEarned + 
+        '! Do you want to buy \n rusty scissors for $' + scissorCost + '? \n a push mower for $' + pushMowerCost + '? \n or nothing?');
+        if (purchase === "rusty scissors" && gamePlay.tool.includes("rusty scissors") === false) { gamePlay.tool.push("rusty scissors"); 
+        gamePlay.moneyEarned -= scissorCost;
+        alert("Thanks for your purchase! Your remaining money is $" + gamePlay.moneyEarned); keepLandscaping();
+        } else if (purchase === "rusty scissors" && gamePlay.tool.includes("rusty scissors") === true){
+            alert("You've already purchased rusty scissors, make another selection."); addTools();
+        } else if (purchase === "push mower") { gamePlay.tool.push("push mower"); 
+        gamePlay.moneyEarned -= pushMowerCost;
+        alert("Thanks for your purchase! Your remaining money is $" + gamePlay.moneyEarned); keepLandscaping();
+        } else if (purchase === "nothing") {
+           //break; 
+           keepLandscaping();
+         } 
+    }
+    if (gamePlay.moneyEarned === 250) {
+        let purchase = prompt(" You've worked " + gamePlay.daysWorked +  " days and earned $" + gamePlay.moneyEarned + 
+        '! Do you want to buy \n rusty scissors for $' + scissorCost + '? \n a push mower for $' + pushMowerCost + '? \n a battery powered mower for $' + batteryMowerCost + 
+        '? \n or nothing?');
+        if (purchase === "rusty scissors" && gamePlay.tool.includes("rusty scissors") === false) { gamePlay.tool.push("rusty scissors"); 
+        gamePlay.moneyEarned -= scissorCost;
+        alert("Thanks for your purchase! Your remaining money is $" + gamePlay.moneyEarned); keepLandscaping();
+        } else if (purchase === "rusty scissors" && gamePlay.tool.includes("rusty scissors") === true){
+            alert("You've already purchased rusty scissors, make another selection."); addTools();
+        } else if (purchase === "push mower" && gamePlay.tool.includes("push mower") === false) { gamePlay.tool.push("push mower"); 
+        gamePlay.moneyEarned -= pushMowerCost;
+        alert("Thanks for your purchase! Your remaining money is $" + gamePlay.moneyEarned); keepLandscaping();
+        } else if (purchase === "push mower" && gamePlay.tool.includes("push mower") === true){
+            alert("You've already purchased a push mower, make another selection."); addTools();
+        } else if (purchase === "battery powered mower") { gamePlay.tool.push("battery powered mower");
+        gamePlay.moneyEarned -= batteryMowerCost;
+        alert("Thanks for your purchase! Your remaining money is $" + gamePlay.moneyEarned); keepLandscaping();
+        } else if (purchase === "nothing") {
+           //break; 
+           keepLandscaping();
+         } 
+      } 
+      if (gamePlay.moneyEarned === 500) {
+        let purchase = prompt(" You've worked " + gamePlay.daysWorked +  " days and earned $" + gamePlay.moneyEarned + 
+        '! Do you want to buy \n rusty scissors for $' + scissorCost + '? \n a push mower for $' + pushMowerCost + '? \n a battery powered mower for $' + batteryMowerCost + 
+        '? \n a team of starving students for $' + studentsCost + ' (enter "team of starving students") \n or nothing?');
+        if (purchase === "rusty scissors" && gamePlay.tool.includes("rusty scissors") === false) { gamePlay.tool.push("rusty scissors"); 
+        gamePlay.moneyEarned -= scissorCost;
+        alert("Thanks for your purchase! Your remaining money is $" + gamePlay.moneyEarned); keepLandscaping();
+        } else if (purchase === "rusty scissors" && gamePlay.tool.includes("rusty scissors") === true){
+            alert("You've already purchased rusty scissors, make another selection."); addTools();
+        } else if (purchase === "push mower" && gamePlay.tool.includes("push mower") === false) { gamePlay.tool.push("push mower"); 
+        gamePlay.moneyEarned -= pushMowerCost;
+        alert("Thanks for your purchase! Your remaining money is $" + gamePlay.moneyEarned); keepLandscaping();
+        } else if (purchase === "push mower" && gamePlay.tool.includes("push mower") === true){
+            alert("You've already purchased a push mower, make another selection."); addTools();
+        } else if (purchase === "battery powered mower" && gamePlay.tool.includes("push mower") === false) { gamePlay.tool.push("battery powered mower");
+        gamePlay.moneyEarned -= batteryMowerCost;
+        alert("Thanks for your purchase! Your remaining money is $" + gamePlay.moneyEarned); keepLandscaping();
+        } else if (purchase === "battery powered mower" && gamePlay.tool.includes("battery powered mower") === true){
+            alert("You've already purchased a battery powered mower, make another selection."); addTools();
+        } else if (purchase === "team of starving students") { gamePlay.tool.push("team of starving students");
+        gamePlay.moneyEarned -= studentsCost;
+        alert("Thanks for your purchase! Your remaining money is $" + gamePlay.moneyEarned); keepLandscaping();
+        } else if (purchase === "nothing") {
+           keepLandscaping();
+         } 
+      } if (gamePlay.moneyEarned === 1000 && gamePlay.tool.includes("team of starving students") === true) {
+        alert("Congratulations! You've earned $" + gamePlay.moneyEarned + "! You have won the game!");
+        break;
+            } 
+         } 
+       } 
+
+
+addTools();    
+
 
 console.log(gamePlay.tool)
 console.log(gamePlay.moneyEarned)
@@ -53,7 +130,7 @@ console.log(gamePlay.moneyEarned)
 //and money earned by 5 if not continue with same incrementation
 //if money earned = 25, prompt "do you want to buy push mower, yes or no?"
 //if push mower is purchased reduce moneyEarned by pushMowerCost 
-//continue above logic for 
+//continue above logic for battery powered mower and team of starving students
 
 
 
