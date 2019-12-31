@@ -29,6 +29,7 @@ const keepLandscaping = () => {
 
 //create a function to add new tools and a for loop to increment the days worked and money earned
 const addTools = () =>{
+    alert("Let's start landscaping!")
 for (gamePlay.daysWorked; gamePlay.moneyEarned <= 1000; gamePlay.daysWorked++, gamePlay.moneyEarned++ ){
   if (gamePlay.moneyEarned === 5) {
       let purchase = prompt(" You've worked " + gamePlay.daysWorked +  " days and earned $" + gamePlay.moneyEarned + '! \n Do you want to buy rusty scissors for $' + scissorCost + 
@@ -109,9 +110,8 @@ for (gamePlay.daysWorked; gamePlay.moneyEarned <= 1000; gamePlay.daysWorked++, g
             } 
          } 
        } 
+//addTools();
 
-
-addTools();    
 
 
 console.log(gamePlay.tool)
