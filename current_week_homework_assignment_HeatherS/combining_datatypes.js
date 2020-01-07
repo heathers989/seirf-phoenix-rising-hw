@@ -39,3 +39,36 @@ let receipt = [
         tenantNames = ['Joe', 'Karen', 'Aaron'], 'fitness center'
     ]
     console.log(apartmentBuilding[4][1])
+
+    //Combine objects, arrays, and functions more than one level deep
+
+    //1.
+    const knit = () => {
+        return {
+            item: 'scarf',
+            length: '6 ft',
+            color: 'blue'
+        }
+    }
+    console.log(knit().length)
+
+    //2.
+    const crayonSelector = () => {
+        return {
+                crayonCount: 25,
+                crayonSize: 'jumbo',
+                crayonColor: ['red', 'yellow', 'sky blue']    
+            }
+        }    
+
+    console.log(crayonSelector().crayonColor[2])
+
+    //3.
+
+    const powerButton = () => {
+        return options = () => {
+                console.log("Select a song")
+            }
+        }
+    console.log(powerButton()())
+    
