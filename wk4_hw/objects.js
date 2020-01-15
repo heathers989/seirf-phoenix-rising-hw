@@ -67,7 +67,7 @@ class Person {
 
 //create a story with Person class
 //1.
-let timmy = new Person('Timmy');
+const timmy = new Person('Timmy');
 
 //2.
 for (i=0; i<5; i++) {
@@ -94,7 +94,7 @@ console.log(timmy.getAge())
 
 console.log(timmy.bankAccount)
 6.
-let gus = new Hamster('Gus')
+const gus = new Hamster('Gus')
 
 //7. 
 gus.owner = 'Timmy';
@@ -115,7 +115,8 @@ timmy.eat();
 timmy.eat();
 
 //11.
-console.log('current weight: ' + timmy.getWeight())
+console.log('current weight: ' + timmy.getWeight());
 timmy.exercise();
 timmy.exercise();
-console.log('new weight: ' + timmy.getWeight())
+console.log('new weight: ' + timmy.getWeight());
+
