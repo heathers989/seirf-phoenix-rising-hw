@@ -34,5 +34,21 @@ $( () => {
   $container.append($wand);
 
 
+  //Year 3
+
+  const $trunk = $('<ul>');
+  $trunk.attr('storage', 'trunk');
+  $container.append($trunk);
+
+  const $li1 = $('<li>').text("butter beer");
+  const $li2 = $('<li>').text("invisibility cloak").attr('class', 'secret');
+  const $li3 = $('<li>').text("magic map").attr('class', 'secret');
+  const $li4 = $('<li>').text("time turner").attr('class', 'secret');
+  const $li5 = $('<li>').text("leash").attr('class', 'toad');
+  const $li6 = $('<li>').text("Bertie Bott's Every Flavor [Jelly] Beans");
+
+  $trunk.append($li1, $li2, $li3, $li4, $li5, $li6)
+
+
 });
 

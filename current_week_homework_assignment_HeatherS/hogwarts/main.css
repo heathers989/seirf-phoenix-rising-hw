@@ -1,9 +1,16 @@
 body {
   background-color: rgb(135, 124, 207);
   text-align: center;
-
 }
 
 .toad {
   font-family: fantasy;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.secret {
+  opacity: 0.5;
 }
