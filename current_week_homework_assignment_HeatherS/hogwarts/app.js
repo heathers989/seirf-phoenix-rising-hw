@@ -49,6 +49,63 @@ $( () => {
 
   $trunk.append($li1, $li2, $li3, $li4, $li5, $li6)
 
+//Year 4
+
+const $table = $('<table>');
+$container.append($table);
+
+const $h5 = $('<h5>').text("Spring 2017");
+$("table").before($h5);
+
+const $thead = $('<thead>');
+$table.append($thead);
+
+const $th1 = $('<th>').text("Day");
+const $th2 = $('<th>').text("Classes");
+
+const $tr1 = $('<tr>');
+$thead.prepend($tr1);
+$tr1.append($th1, $th2);
+
+
+const $tr2 = $('<tr>');
+$table.append($tr2);
+
+const $tdDay1 = $('<td>').text("Monday");
+const $tdClass1 = $('<td>').text("Herbology, Divination");
+$tr2.append($tdDay1, $tdClass1);
+
+
+const $tr3 = $('<tr>');
+$table.append($tr3);
+
+const $tdDay2 = $('<td>').text("Tuesday");
+const $tdClass2 = $('<td>').text("Potions");
+$tr3.append($tdDay2, $tdClass2);
+
+
+const $tr4 = $('<tr>');
+$table.append($tr4);
+
+const $tdDay3 = $('<td>').text("Wednesday");
+const $tdClass3 = $('<td>').text("Charms");
+$tr4.append($tdDay3, $tdClass3);
+
+
+const $tr5 = $('<tr>');
+$table.append($tr5);
+
+const $tdDay4 = $('<td>').text("Thursday");
+const $tdClass4 = $('<td>').text("History of Magic");
+$tr5.append($tdDay4, $tdClass4);
+
+
+const $tr6 = $('<tr>');
+$table.append($tr6);
+
+const $tdDay5 = $('<td>').text("Friday");
+const $tdClass5 = $('<td>').text("Transfiguration");
+$tr6.append($tdDay5, $tdClass5);
 
 });
 
