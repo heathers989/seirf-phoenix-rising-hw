@@ -107,5 +107,24 @@ const $tdDay5 = $('<td>').text("Friday");
 const $tdClass5 = $('<td>').text("Transfiguration");
 $tr6.append($tdDay5, $tdClass5);
 
+
+//Year 5
+
+$($wand).remove();
+
+$($li1).remove();
+
+const $newWand = $('<h4>').text("Hawthorn Wand with Dragon Heartstring Core")
+
+$h4.after($newWand);
+
+$newWand.css('color', 'indigo');
+
+$trunk.after($h4);
+
+$h4.remove();
+
+$h3.after($h4);
+
 });
 
