@@ -126,5 +126,23 @@ $h4.remove();
 
 $h3.after($h4);
 
+
+
+//Year 6
+
+$('.secret').delay(2000).hide("slow");
+
+$('.secret').show("slow");
+
+$li5.addClass("cabbage")
+
+$li5.removeClass("cabbage")
+
+
+//Year 7
+
 });
+
+
+
 
