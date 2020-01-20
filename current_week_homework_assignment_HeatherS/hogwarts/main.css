@@ -1,28 +1,39 @@
 body {
-  background-color: rgb(150, 143, 199);
+  background-image: url("http://www.penguinteen.com/content/uploads/Hogwarts-castle-harry-potter-166431.jpg");
   text-align: center;
+  color: white;
+}
+
+#container {
+  background-color: rgba(0, 0, 0, 0.35);
+  padding-bottom: 200px;
 }
 
 .toad {
   font-family: fantasy;
 }
 
+/* In your main.css file, remove the bullet points from the list items */
 ul {
   list-style-type: none;
 }
 
+/* In your main.css file, give the items with a class of secret an attribute of opacity: 0.5; */
 .secret {
   opacity: 0.5;
 }
 
+/* In your main.css file, add a gray 1px solid border around your table, th elements and td elements */
 table, td, th {
   border: 1px solid gray;
 }
 
+/* In your main.css file, add a rule that will center your table on the page */
 table {
   margin: 0 auto;
 }
 
+/* add color chartreuse for elements with class of cabbage */
 .cabbage {
 
   color: chartreuse;
