@@ -143,7 +143,7 @@ ul {
     left: 71%;
     top: 66%;
   }
-
+}
 
 @media (max-width: 850px) {
 
@@ -164,5 +164,4 @@ ul {
     left: 600px;
     top: 385px;
   }
-
 }
