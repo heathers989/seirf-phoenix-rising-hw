@@ -228,6 +228,12 @@ const theBalrog = () => {
      $gTW.eq(0).text("Gandalf the White").addClass('the-white');
 
   // 3. in the style.css file, add a css rule to make elements of the class "the-white" have a white background and a grey border
+  /*added to style.css:
+  .the-white {
+  border: 3px solid grey;
+  background-color: white;
+  display: inline-block;
+} */
 
 };
 
@@ -312,7 +318,7 @@ const thereAndBackAgain = () => {
 };
 
 // COMMIT YOUR WORK
-// The commit message should read: "Chapter 13 complete -Gollum and the ring are gone, the baddies are done, and the hobbits are back in the shire".
+// The commit message should read: "Chapter 13 complete -Gollum and the ring are gone, the baddies are done, and the hobbits are back in the shire" .
 
 
 // =====================================
