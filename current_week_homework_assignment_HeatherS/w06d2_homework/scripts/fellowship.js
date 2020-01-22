@@ -261,12 +261,12 @@ const itsDangerousToGoAlone = () => {
 
   // 1. take Frodo and Sam out of the fellowship and move them to Mordor (they don't need to be inside a ul in Mordor)
   const $frodo = $('.hobbit:first-child');
-  const $sam = $('.hobbit:nth-child(2)')
-  $('#Mordor').append($frodo, $sam)
+  const $sam = $('.hobbit:nth-child(2)');
+  $('#Mordor').append($frodo, $sam);
 
   // 2. add a div with an id of 'mount-doom' to Mordor
-  const $mtDoom = $('<div>').attr('id', 'mount-doom')
-  $('#Mordor').append($mtDoom)
+  const $mtDoom = $('<div>').attr('id', 'mount-doom');
+  $('#Mordor').append($mtDoom);
 
 };
 
@@ -279,10 +279,15 @@ const itsDangerousToGoAlone = () => {
 const weWantsIt = () => {
 
   // 1. Create a div with an id of 'gollum' and add it to Mordor
+  const $gollum = $('<div>').attr('id', 'gollum');
+  $('#Mordor').append($gollum);
 
   // 2. Move the ring from Frodo and give it to Gollum
+  const $theRing = $('#the-ring');
+  $gollum.append($theRing);
 
   // 3. Move Gollum into Mount Doom
+  $('#mount-doom').append($gollum);
 
 };
 
