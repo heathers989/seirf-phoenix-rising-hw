@@ -1,0 +1,23 @@
+#container {
+    padding: 5px;
+    background-color: black;
+    color: blue;
+    height: 320px;
+    width: 335px;
+    text-align: center;
+}
+
+ .number {
+    color: white;
+    height: 100px;
+    width: 100px;
+    font-style: bold;
+    text-align: center;
+    font-size: 80px;
+    line-height: 98px;
+    vertical-align: middle;
+    display: inline-block;
+    margin: 1px;
+    border: 2px solid white;
+    overflow: hidden;
+ }
