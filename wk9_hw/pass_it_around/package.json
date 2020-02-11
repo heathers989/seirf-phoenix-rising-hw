@@ -1,0 +1,15 @@
+{
+  "name": "pass_it_around",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Heather Spoelstra",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
