@@ -8,7 +8,7 @@ app.get('/', (req, res)=>{
     <html>
     <body>
     <h1>99 bottles of beer on the wall</h1>
-    <a href="localhost:3002/98">take one down pass it around</a>
+    <a href="/98">take one down pass it around</a>
     </body>
     </html>`)
 });
@@ -21,7 +21,7 @@ app.get('/:number_of_bottles', (req, res)=>{
         <html>
         <body>
         <h1>${bottleNum} bottles of beer on the wall</h1>
-        <a href="localhost:3002/${takeOneDown}">take one down pass it around</a>
+        <a href="/${takeOneDown}">take one down pass it around</a>
         </body>
         </html>`)
 
@@ -29,7 +29,7 @@ app.get('/:number_of_bottles', (req, res)=>{
         res.send(`<html>
                   <body>
                   <h1>${bottleNum} bottles of beer on the wall</h1>
-                  <a href="localhost:3002/">Start Over</a>
+                  <a href="/">Start Over</a>
                 </body></html>`)
     }
     
