@@ -13,7 +13,7 @@ app.get("/", (req, res) => {
   });
 
   app.get("/pokemon/:id", (req, res) => {
-    res.send(req.params.id);
+    res.render('show.ejs', {pokemon: pokemon[req.params.id]});
   });
 
 app.listen(port, () => {
