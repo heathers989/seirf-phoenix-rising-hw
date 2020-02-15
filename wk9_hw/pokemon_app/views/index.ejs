@@ -5,14 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pokemon App</title>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" 
+        rel="stylesheet">
     <style type="text/css">
         body {
+            font-family: 'Press Start 2P', cursive;
           color: blanchedalmond;
           background-color: steelblue;
+        }
+        li::first-letter {
+            text-transform: capitalize;
         }
       </style>
 </head>
 <body>
    <h1>See All The Pokemon!</h1>
+
+   <% for (let i = 0; i < pokemon.length; i++) { %>
+    <ul><li><%= pokemon[i].name%></li></ul>
+    <% } %>
+
 </body>
 </html>
