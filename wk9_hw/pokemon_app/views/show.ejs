@@ -12,15 +12,29 @@
             font-family: 'Press Start 2P', cursive;
           color: blanchedalmond;
           background-color: steelblue;
+          text-align: center;
         }
         h2::first-letter {
             text-transform: capitalize;
+        }
+
+        img {
+            -moz-box-shadow: 10px 10px 5px #ccc;
+            -webkit-box-shadow: 10px 10px 5px #ccc;
+            box-shadow: 10px 10px 5px #ccc;
+            -moz-border-radius:25px;
+            -webkit-border-radius:25px;
+            border-radius:25px;
+            margin-bottom: 10px;
+        }
+        a {
+            color: azure;
         }
       </style>
 </head>
 <body>
    <h1>Gotta Catch 'Em All!</h1>
-   <h2> <%=pokemon.name%></h2>
+   <h2>This Pokemon is:</h2><h2><%=pokemon.name%></h2>
    <img src="<%=pokemon.img%>.jpg">
 </br></br>
    <a href="../pokemon/">Back To Index</a>
