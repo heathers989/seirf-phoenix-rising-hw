@@ -13,6 +13,11 @@
 
    <div class="container">
     <h1>Hello Adult Life</h1> 
+    <table>
+    <% for (let i = 0; i < budget.length; i++) { %>
+        <tr><td> <%= budget[i].date %> <a href='#'> <%= budget[i].name %></a> <%= budget[i].amount %></tr></td> 
+       <% } %>
+    </table>
    </div>
 </body>
 </html>

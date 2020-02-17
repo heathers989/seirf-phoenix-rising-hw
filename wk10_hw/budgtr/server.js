@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
 
   // index route
 app.get('/budgets', (req, res) => {
-    res.render('index.ejs', {budget: module.exports});
+    res.render('index.ejs', {budget: budget});
   });
 
 app.listen(port, () => {
