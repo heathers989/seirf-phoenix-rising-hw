@@ -9,6 +9,14 @@
     <link rel="stylesheet" href="/skeleton.css">
 </head>
 <body>
-    
+    <div class="container">
+        <h1><%=transaction.name%></h1>
+        <button onclick="window.location.href = '../budgets/';">Go Back</button>
+        <p>Date: <%=transaction.date%></p>
+        <p>Name: <%=transaction.name%></p>
+        <p>From: <%=transaction.from%></p>
+        <p>Amount: <%=transaction.amount%></p>
+        <p>Tags: <%=transaction.tags%></p>
+    </div>
 </body>
 </html>

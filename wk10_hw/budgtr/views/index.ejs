@@ -14,8 +14,8 @@
    <div class="container">
     <h1>Hello Adult Life</h1> 
     <table>
-    <% for (let i = 0; i < budget.length; i++) { %>
-        <tr><td> <%= budget[i].date %> </td> <td><a href='#'> <%= budget[i].name %></a></td> <td><%= budget[i].amount %></td> </tr>
+    <% for (let i = 0; i < transaction.length; i++) { %>
+        <tr><td> <%= transaction[i].date %> </td> <td><a href='/budgets/<%=i%>'><%= transaction[i].name %></a></td> <td><%= transaction[i].amount %></td> </tr>
        <% } %>
     </table>
    </div>

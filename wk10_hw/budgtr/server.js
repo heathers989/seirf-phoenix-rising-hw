@@ -14,16 +14,21 @@ app.use((req, res, next) => {
 
   //without this middleware, req.body is undefined
   //with it, a body key is added and set to whatever was sent in the body
-  app.use(express.urlencoded({extended: true}))
+  app.use(express.urlencoded({extended: false}))
 
-    // index route
+    
 app.get('/', (req, res) => {
     res.send('Budgtr app working');
   });
 
   // index route
 app.get('/budgets', (req, res) => {
-    res.render('index.ejs', {budget: budget});
+    res.render('index.ejs', {transaction: budget});
+  });
+
+  // show route
+app.get('/budgets/:id', (req, res) => {
+    res.render('show.ejs', {transaction: budget[req.params.id]});
   });
 
 app.listen(port, () => {
