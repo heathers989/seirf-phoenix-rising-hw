@@ -21,6 +21,22 @@ app.get('/', (req, res) => {
     res.send('Budgtr app working');
   });
 
+  app.get('/budgets/new', (req, res) => {
+    res.render('new.ejs')
+  })
+
+  app.post('/budgets', (req, res) => {
+    let newTransaction = {}
+    newTransaction.date = req.body.date
+    newTransaction.name = req.body.name
+    newTransaction.from = req.body.from
+    newTransaction.amount = req.body.amount
+    newTransaction.tags = req.body.tags
+    budget.push(newTransaction)
+  
+    res.redirect('/budgets')
+  })
+
   // index route
 app.get('/budgets', (req, res) => {
     res.render('index.ejs', {transaction: budget});
@@ -30,6 +46,7 @@ app.get('/budgets', (req, res) => {
 app.get('/budgets/:id', (req, res) => {
     res.render('show.ejs', {transaction: budget[req.params.id]});
   });
+
 
 app.listen(port, () => {
     console.log(`Budgtr app listening on port: ${port}`)
