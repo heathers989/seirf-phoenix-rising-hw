@@ -13,12 +13,20 @@
 
    <div class="container">
     <h1>Hello Adult Life</h1> 
+    <%let bankAccount = 0 %>
+    <h4>Starting balance: <%= bankAccount %></h4>
+   
     <table>
     <% for (let i = 0; i < transaction.length; i++) { %>
-        <tr><td> <%= transaction[i].date %> </td> <td><a href='/budgets/<%=i%>'><%= transaction[i].name %></a></td> <td><%= transaction[i].amount %></td> </tr>
+        <tr><td> <%= transaction[i].date %> </td> <td><a href='/budgets/<%=i%>'><%= transaction[i].name %></a></td> <td><%= transaction[i].amount %></td> 
+        <% bankAccount += transaction[i].amount %>
+            <td> <%=bankAccount %></td></tr>
        <% } %>
     </table>
+    <h4>Ending balance: <%= bankAccount %> </h4>
     <button onclick="window.location.href = '/budgets/new';">Add New Item</button>
+        <br/>
+        <br/>
    </div>
 </body>
 </html>
