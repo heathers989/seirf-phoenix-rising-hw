@@ -10,6 +10,7 @@ app.use((req, res, next) => {
     next()
   })
   
+  //this is to get separate CSS working
   app.use(express.static(__dirname + '/public'));
 
   //without this middleware, req.body is undefined
@@ -30,7 +31,7 @@ app.get('/', (req, res) => {
     newTransaction.date = req.body.date
     newTransaction.name = req.body.name
     newTransaction.from = req.body.from
-    newTransaction.amount = req.body.amount
+    newTransaction.amount = parseInt(req.body.amount)
     newTransaction.tags = req.body.tags
     budget.push(newTransaction)
   
