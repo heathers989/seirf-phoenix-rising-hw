@@ -20,7 +20,13 @@
     <% for (let i = 0; i < transaction.length; i++) { %>
         <tr><td> <%= transaction[i].date %> </td> <td><a href='/budgets/<%=i%>'><%= transaction[i].name %></a></td> <td><%= transaction[i].amount %></td> 
         <% bankAccount += transaction[i].amount %>
+        <% if (bankAccount >= 1000 ) { %>
+            <td style="background-color:green"> <%=bankAccount %></td></tr>
+        <% } else if (bankAccount < 0 ) { %>
+            <td style="background-color:red"> <%=bankAccount %></td></tr>
+        <% } else { %>
             <td> <%=bankAccount %></td></tr>
+            <% } %>         
        <% } %>
     </table>
     <h4>Ending balance: <%= bankAccount %> </h4>
