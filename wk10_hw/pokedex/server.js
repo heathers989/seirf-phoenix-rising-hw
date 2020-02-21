@@ -17,6 +17,11 @@ app.get("/pokedex", (req, res) => {
     res.render("index.ejs", { data: pokemon });
   });
 
+// SHOW
+app.get('/pokedex/:id', (req, res) => {
+    res.render("show.ejs", {data: pokemon[req.params.id]})
+})
+
 
 app.listen(port, () => {
     console.log(`Pokedex app listening on port ${port}`)

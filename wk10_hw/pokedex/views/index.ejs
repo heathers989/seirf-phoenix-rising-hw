@@ -7,12 +7,19 @@
     <title>Pokedex</title>
 </head>
 <body>
+    
     <h1>Welcome to the Pokedex App!</h1>
+    <h2>Click the Pokemon's image to learn more about it!</h2>
 
-    <table>
+    <div id="container" style="max-width: 920px;">
         <% for (let i = 0; i < data.length; i++) { %>
-            <tr><td> <%= data[i].name %> </td> <td><img style="max-height: 200px;max-width: 200px;" src="<%=data[i].img%>"></td></tr>        
+            
+            <a href="/pokedex/<%=i%>"><img style="max-width:150px; max-height: 200px;" src="<%=data[i].img%>"></a>
+        
+           
            <% } %>
-        </table>
+        
+
+    </div>
 </body>
 </html>
