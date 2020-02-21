@@ -8,5 +8,11 @@
 </head>
 <body>
     <h1>Welcome to the Pokedex App!</h1>
+
+    <table>
+        <% for (let i = 0; i < data.length; i++) { %>
+            <tr><td> <%= data[i].name %> </td> <td><img style="max-height: 200px;max-width: 200px;" src="<%=data[i].img%>"></td></tr>        
+           <% } %>
+        </table>
 </body>
 </html>
