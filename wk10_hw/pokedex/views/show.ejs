@@ -9,6 +9,12 @@
 <body>
     <h1><%=data.name%></h1>
     <img src="<%=data.img%>"> 
-   <div> <%=data.type[0] %><%=', ' + data.type[1] %> </div>
+   <div> <%=data.type[0]%><%if (data.type[1]){ %><%=', ' + data.type[1] %> </div>
+   <%} else { %>
+        </div>
+  <% } %> 
+  <div><%=data.misc.classification%></div>
+  
+  
 </body>
 </html>
