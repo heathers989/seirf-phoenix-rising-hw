@@ -4,17 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" 
+    rel="stylesheet">
     <title>Pokedex</title>
 </head>
 <body>
     
-    <h1>Welcome to the Pokedex App!</h1>
-    <h2>Click the Pokemon's image to learn more about it!</h2>
-    <button onclick="window.location.href = '/pokedex/new';">Add New Pokemon</button>
-    <div id="container" style="max-width: 920px;">
+    <h1>Welcome to the Pokédex App!</h1>
+    <h2>Click the Pokémon's image to learn more about it!</h2>
+    <button onclick="window.location.href = '/pokedex/new';">Add New Pokémon</button>
+    <div id="container">
         <% for (let i = 0; i < data.length; i++) { %>
             
+                <div style="display: inline-block;">
             <a href="/pokedex/<%=i%>"><img style="max-width:150px; max-height: 200px;" src="<%=data[i].img%>"></a>
+           <div><span><form style="float: left" action="/pokedex/<%=i%>/edit" method="GET">
+            <input type="submit" value="Edit"></form></span> <span><form style="float: left" action="/pokedex/<%=i%>?_method=DELETE" method="POST">
+        <input type="submit" value="Delete"></form></span> </div> 
+        </div>
+
+    
            <% } %>
         
 

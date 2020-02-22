@@ -4,19 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" 
+    rel="stylesheet">
     <title>Pokedex App</title>
 </head>
 <body>
+    <div id="container">
     <h1><%=data.name%></h1>
+    
     <img src="<%=data.img%>"> 
-   <div> <%=data.type[0]%><%if (data.type[1]){ %><%=', ' + data.type[1] %> </div>
+   <div>Type(s): <%=data.type[0]%><%if (data.type[1]){ %><%=', ' + data.type[1] %> </div>
    <%} else { %>
         </div>
   <% } %> 
-  <div><%=data.misc.classification%></div>
+  <div>Classification: <%=data.misc.classification%></div>
+  <div>HP: <%=data.stats.hp%></div>
+  <div>Attack: <%=data.stats.attack%></div>
+  <div>Defense: <%=data.stats.defense%></div>
     </br>
   <button onclick="window.location.href = '../pokedex/';">Back to Index</button>
-  
+</div>
   
 </body>
 </html>

@@ -1,0 +1,19 @@
+body {
+    background-color: royalblue;
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+}
+
+div {
+    margin-bottom: 4px;
+    margin-top: 4px;
+}
+
+#container {
+    max-width: 920px;
+    margin: 0 auto;
+}
+
+form {
+    margin-bottom: 10px;
+}
