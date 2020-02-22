@@ -42,7 +42,7 @@ app.get('/pokedex/:id', (req, res) => {
 // INDEX:
 app.get("/pokedex", (req, res) => {
     res.render("index.ejs", { data: pokemon });
-    console.log(pokemon[0].misc.classification)
+    
   });
 
 
