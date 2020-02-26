@@ -9,8 +9,12 @@ div {
     margin-top: 4px;
 }
 
+.pokemon {
+    width: 160px;
+}
+
 #container {
-    max-width: 920px;
+    max-width: 1040px;
     margin: 0 auto;
 }
 

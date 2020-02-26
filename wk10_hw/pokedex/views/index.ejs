@@ -19,7 +19,7 @@
             
                 <div style="display: inline-block;">
             <a href="/pokedex/<%=i%>"><img style="max-width:150px; max-height: 200px;" src="<%=data[i].img%>"></a>
-           <div><span><form style="float: left" action="/pokedex/<%=i%>/edit" method="GET">
+           <div class="pokemon"><span><form style="float: left" action="/pokedex/<%=i%>/edit" method="GET">
             <input type="submit" value="Edit"></form></span> <span><form style="float: left" action="/pokedex/<%=i%>?_method=DELETE" method="POST">
         <input type="submit" value="Delete"></form></span> </div> 
         </div>
