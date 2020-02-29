@@ -12,12 +12,14 @@
     <div>
             <% for(let i = 0; i < products.length; i++){ %>
             <div>
-                    <div> <%=products[i].name; %> </div>
+                    <div> <a href="/store/<%=products[i].id %>">
+                        <%=products[i].name; %> </a> </div>
                     <div> <%=products[i].description; %> </div>
                     <div>  <img style= "max-width: 200px;" src="<%=products[i].img%>"> </div>
                     <div>  $ <%=products[i].price; %> </div>
                     <div>  # in stock: <%=products[i].qty; %> </div>
                 </div>
+            </br>
             <% } %>
         </div>
         
