@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mongoose Store</title>
+</head>
+<body>
+    <h1>Mongoose Store Index</h1>
+
+    <div>
+            <% for(let i = 0; i < products.length; i++){ %>
+            <div>
+                    <div> <%=products[i].name; %> </div>
+                    <div> <%=products[i].description; %> </div>
+                    <div>  <img style= "max-width: 200px;" src="<%=products[i].img%>"> </div>
+                    <div>  $ <%=products[i].price; %> </div>
+                    <div>  # in stock: <%=products[i].qty; %> </div>
+                </div>
+            <% } %>
+        </div>
+        
+               <nav>
+                <a href="/store/new">Add a New Product</a>
+            </nav>
+    
+</body>
+</html>
