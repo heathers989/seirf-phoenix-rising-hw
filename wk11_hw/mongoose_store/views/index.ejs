@@ -11,13 +11,18 @@
 
     <div id="container" style="display: flex; flex-direction: row;">
             <% for(let i = 0; i < products.length; i++){ %>
-            <div class="product" style="display: flex; flex-direction: column; margin: 4px; max-width: min-content;">
-                     <a href="/store/<%=products[i].id %>">
-                        <%=products[i].name; %> </a> 
+            <div class="product" style="display: flex; flex-direction: column; margin-right: 10px; max-width: min-content;">
+                    
+                        <%=products[i].name; %> 
                    <%=products[i].description; %> 
-                    <img style= "max-width: 250px;" src="<%=products[i].img%>"> 
+                   <a href="/store/<%=products[i].id %>"><img style= "max-width: 225px;" src="<%=products[i].img%>"> </a> 
                     $<%=products[i].price; %> </br>
                     # in stock: <%=products[i].qty; %> 
+                    <% if (products[i].qty < 1 ) { %>
+                        <div> OUT OF STOCK</div>
+                    <%  } else { %>
+                    <div id="qty"><%=products[i].qty %> left in stock</div>
+                   <% } %>
                 </div>
             </br>
             <% } %>
