@@ -9,15 +9,15 @@
 <body>
     <h1>Mongoose Store Index</h1>
 
-    <div>
+    <div id="container" style="display: flex; flex-direction: row;">
             <% for(let i = 0; i < products.length; i++){ %>
-            <div>
-                    <div> <a href="/store/<%=products[i].id %>">
-                        <%=products[i].name; %> </a> </div>
-                    <div> <%=products[i].description; %> </div>
-                    <div>  <img style= "max-width: 200px;" src="<%=products[i].img%>"> </div>
-                    <div>  $ <%=products[i].price; %> </div>
-                    <div>  # in stock: <%=products[i].qty; %> </div>
+            <div class="product" style="display: flex; flex-direction: column; margin: 4px; max-width: min-content;">
+                     <a href="/store/<%=products[i].id %>">
+                        <%=products[i].name; %> </a> 
+                   <%=products[i].description; %> 
+                    <img style= "max-width: 250px;" src="<%=products[i].img%>"> 
+                    $<%=products[i].price; %> </br>
+                    # in stock: <%=products[i].qty; %> 
                 </div>
             </br>
             <% } %>
