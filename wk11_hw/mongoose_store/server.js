@@ -105,7 +105,7 @@ app.get('/store/:id/edit', (req, res)=> {
 app.put('/store/:id', (req, res)=>{
     Product.findByIdAndUpdate(req.params.id, req.body, 
         {new: true}, (err, updatedModel) => {
-            res.redirect('/store')
+            res.redirect(`/store/${req.params.id}`)
     })
 })
 

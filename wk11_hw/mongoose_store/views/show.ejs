@@ -6,7 +6,8 @@
     </head>
     <body>
         <h1><%=product.name %> show page</h1>
-       <div><%=product.name; %> </div> 
+       <div><%=product.name; %> </div>
+       <div><%=product.description %></div>
     <div> <img style="max-width: 500px;" src="<%=product.img %>"> </div>
       <div> $<%=product.price %></div>
       <% if (product.qty < 1 ) { %>
