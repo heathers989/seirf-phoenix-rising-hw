@@ -101,6 +101,14 @@ app.get('/store/:id/edit', (req, res)=> {
     })  
 })
 
+//PUT/update
+app.put('/store/:id', (req, res)=>{
+    Product.findByIdAndUpdate(req.params.id, req.body, 
+        {new: true}, (err, updatedModel) => {
+            res.redirect('/store')
+    })
+})
+
 
 // WEB SERVER //
 // Load up the express web server. IMPORTANT: Always do this at the end of your server.js:
