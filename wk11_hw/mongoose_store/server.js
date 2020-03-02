@@ -2,6 +2,7 @@
 const express = require("express");
 const app = express();
 
+
 //connect mongoose
 const mongoose = require("mongoose")
 mongoose.connect('mongodb://localhost:27017/mongoosestoredb', { useNewUrlParser: true, useUnifiedTopology: true});
@@ -15,6 +16,8 @@ const port = 3000;
 // Load methodOverride middleware so you can make delete, put, and
 // patch requests from web pages:
 const methodOverride = require("method-override");
+
+app.use(express.static('public'))
 
 
 // Load body parser middleware:
