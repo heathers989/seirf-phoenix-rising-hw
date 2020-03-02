@@ -110,6 +110,14 @@ app.put('/store/:id', (req, res)=>{
 })
 
 
+//delete
+app.delete('/store/:id', (req, res)=>{
+    Product.findByIdAndRemove(req.params.id, (err, data) =>{
+        res.redirect('/store')
+    })
+})
+
+
 // WEB SERVER //
 // Load up the express web server. IMPORTANT: Always do this at the end of your server.js:
 app.listen(port, () => {
