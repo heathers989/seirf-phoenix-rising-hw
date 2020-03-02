@@ -13,7 +13,7 @@
             <% for(let i = 0; i < products.length; i++){ %>
             <div class="product" style="display: flex; flex-direction: column; margin-right: 10px; max-width: min-content;">
                     
-                        <%=products[i].name; %> 
+                    <div>  <%=products[i].name; %> </div>
                    <%=products[i].description; %> 
                    <a href="/store/<%=products[i].id %>"><img style= "max-width: 225px;" src="<%=products[i].img%>"> </a> 
                     $<%=products[i].price; %> </br>

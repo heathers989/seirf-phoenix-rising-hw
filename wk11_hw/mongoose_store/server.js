@@ -94,6 +94,13 @@ app.get('/store/:id', (req, res) => {
     })
 })
 
+//edit
+app.get('/store/:id/edit', (req, res)=> {
+    Product.findById(req.params.id, (err, foundProduct) => {
+        res.render('edit.ejs', {product: foundProduct})
+    })  
+})
+
 
 // WEB SERVER //
 // Load up the express web server. IMPORTANT: Always do this at the end of your server.js:
