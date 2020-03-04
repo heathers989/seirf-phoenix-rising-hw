@@ -1,27 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
-    <title>Mongoose Store</title>
+    <%- include('./partials/head.ejs') %>
 </head>
 <body>
-    <h1>Mongoose Store Index</h1>
+    <h1> <a href="/store">Mongoose Store Index</a></h1>
 
-    <div id="container" style="display: flex; flex-direction: row;">
+    <div id="container">
             <% for(let i = 0; i < products.length; i++){ %>
             <div class="product" style="display: flex; flex-direction: column; margin-right: 10px; max-width: min-content;">
                     
-                    <div>  <%=products[i].name; %> </div>
+                    <h3>  <%=products[i].name; %> </h3>
                    <%=products[i].description; %> 
                    <a href="/store/<%=products[i].id %>"><img style= "max-width: 225px;" src="<%=products[i].img%>"> </a> 
                     $<%=products[i].price; %> </br>
-                    # in stock: <%=products[i].qty; %> 
                     <% if (products[i].qty < 1 ) { %>
                         <div> OUT OF STOCK</div>
                     <%  } else { %>
@@ -31,10 +23,10 @@
             </br>
             <% } %>
         </div>
-        
+            </br>
                <nav>
-                <a href="/store/new">Add a New Product</a>
+               <h2> <a href="/store/new">Add a New Product</a></h2>
             </nav>
-    
+        
 </body>
 </html>
