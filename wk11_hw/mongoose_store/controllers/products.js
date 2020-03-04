@@ -70,6 +70,13 @@ router.get('/:id', (req, res) => {
     })
 })
 
+//delete
+router.delete('/:id', (req, res)=>{
+  Product.findByIdAndRemove(req.params.id, (err, data) =>{
+      res.redirect('/store')
+  })
+})
+
 //edit
 router.get('/:id/edit', (req, res)=> {
     Product.findById(req.params.id, (err, foundProduct) => {
@@ -77,29 +84,19 @@ router.get('/:id/edit', (req, res)=> {
     })  
 })
 
+//PUT/update
+router.put('/:id', (req, res)=>{
+  Product.findByIdAndUpdate(req.params.id, req.body, 
+      {new: true}, (err, updatedModel) => {
+          res.redirect(`/store/${req.params.id}`)
+  })
+})
 
 router.put('/:id/buy', (req, res) => {
     Product.findByIdAndUpdate( req.params.id , { $inc : {qty : -1}}, (err, product) => {
         res.redirect(`/store/${req.params.id}`)
     })
             
-})
-
-//PUT/update
-router.put('/:id', (req, res)=>{
-    
-    Product.findByIdAndUpdate(req.params.id, req.body, 
-        {new: true}, 
-              (err, updatedModel) => {
-            res.redirect(`/store/${req.params.id}`)
-    })
-})
-
-//delete
-router.delete('/:id', (req, res)=>{
-    Product.findByIdAndRemove(req.params.id, (err, data) =>{
-        res.redirect('/store')
-    })
 })
 
 module.exports = router

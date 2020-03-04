@@ -2,7 +2,10 @@
 const express = require("express");
 const app = express();
 
-
+// Load methodOverride middleware so you can make delete, put, and
+// patch requests from web pages:
+const methodOverride = require("method-override");
+app.use(methodOverride("_method"));
 
 //connect mongoose
 const mongoose = require("mongoose")
@@ -11,12 +14,13 @@ mongoose.connection.once('open', ()=> {
     console.log('connected to mongo');
 });
 
+// Load methodOverride as middleware to support ?_method=<METHOD> query strings:
+
+app.use(express.urlencoded({ extended: true }));
+
 // Set the web server port:
 const port = 3000;
 
-// Load methodOverride middleware so you can make delete, put, and
-// patch requests from web pages:
-const methodOverride = require("method-override");
 
 //use public folder for styling/outside code
 app.use(express.static('public'))
@@ -25,12 +29,8 @@ const storeController = require('./controllers/products.js')
 app.use('/store', storeController)
 
 // Load body parser middleware:
-app.use(express.urlencoded({ extended: false }));
 
-// Load methodOverride as middleware to support ?_method=<METHOD> query strings:
-app.use(methodOverride("_method"));
 
-const Product = require('./models/products.js')
 
 
 app.get('/', (req, res) => {
