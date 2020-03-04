@@ -3,11 +3,11 @@
     <head>
         <meta charset="utf-8">
         <title>My Store</title>
-        
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
     </head>
     <body>
         <h1><%=product.name %> show page</h1>
-       <div><%=product.name; %> </div>
+       <div><%=product.name %> </div>
        <div><%=product.description %></div>
     <div> <img style="max-width: 500px;" src="<%=product.img %>"> </div>
       <div> $<%=product.price %></div>
@@ -16,7 +16,9 @@
     <%  } else { %>
     <div id="qty"><%=product.qty %> left in stock</div>
 
-    <button id="buy" style="width: 50px; height: 30px;">BUY</button> </br>
+    <form action="/store/<%=product.id%>/buy?_method=PUT" method="POST">
+        <input type="submit" value="BUY" />
+    </form> </br>
    <% } %>
    <a href="/store/<%=product.id %>/edit">Edit</a>
    <form action="/store/<%=product.id%>?_method=DELETE" method="POST">
@@ -25,7 +27,6 @@
         <nav>
             <a href="/store">Back to Products Index</a>
         </nav>
-               
                       
     </body>
 </html>
