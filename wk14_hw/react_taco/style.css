@@ -1,0 +1,22 @@
+.App {
+    text-align: center;
+    margin: 0 auto;
+    color: darkred;
+    
+}
+
+.taco {
+    color: darkgreen;
+}
+
+h2 {
+    color: goldenrod;
+}
+
+h3 {
+    color: darkred
+}
+
+* {
+    background-color: wheat;
+}
