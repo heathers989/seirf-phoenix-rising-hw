@@ -9,14 +9,22 @@
     color: darkgreen;
 }
 
-h2 {
+.shell {
     color: goldenrod;
 }
 
-h3 {
+h2 {
     color: darkred
+}
+
+h3 {
+    color: goldenrod;
 }
 
 * {
     background-color: wheat;
+}
+
+img {
+    max-width: 150px;
 }
