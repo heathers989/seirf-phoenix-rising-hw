@@ -5,6 +5,8 @@ class TacoInfo extends React.Component {
         <div className="taco">
           <h1 className="shell">Shell: {this.props.taco.shell.name}</h1>
           <p> {this.props.taco.shell.recipe}</p>
+          <h1>Base layer: {this.props.taco.base_layer.name}</h1>
+          <p>{this.props.taco.base_layer.recipe}</p>
           <h2>Mixin': {this.props.taco.mixin.name} </h2>
           <p>{this.props.taco.mixin.recipe}</p>
           <h3>Condiment: {this.props.taco.condiment.name} </h3>
