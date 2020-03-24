@@ -92,6 +92,7 @@ router.put('/:id', (req, res)=>{
   })
 })
 
+//put
 router.put('/:id/buy', (req, res) => {
     Product.findByIdAndUpdate( req.params.id , { $inc : {qty : -1}}, (err, product) => {
         res.redirect(`/store/${req.params.id}`)

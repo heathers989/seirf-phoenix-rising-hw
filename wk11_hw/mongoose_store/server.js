@@ -23,16 +23,14 @@ app.use(express.urlencoded({ extended: true }));
 const port = 3000;
 
 
-//use public folder for styling/outside code
+//use public folder for styling
 app.use(express.static('public'))
 
-
-
-
+//connect routes from controller folder
 const storeController = require('./controllers/products.js')
 app.use('/store', storeController)
 
-
+//root redirect
 app.get('/', (req, res) => {
   res.redirect('/store')
 })
