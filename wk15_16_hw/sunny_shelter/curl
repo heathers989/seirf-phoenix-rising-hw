@@ -1,0 +1,3 @@
+curl -X POST -H "Content-Type: application/json" -d '{"name":"Piper", "species":"dog", "breed":"mixed", "age":1, "adopted":true, "personalityTraits": "['energetic', 'affectionate']" }' http://localhost:3003/animals
+
+curl -X POST -H "Content-Type: application/json" -d '{"name":"Larry", "species":"cat", "breed":"mixed", "age":3, "adopted":false, "personalityTraits": "mellow" }' http://localhost:3003/animals
