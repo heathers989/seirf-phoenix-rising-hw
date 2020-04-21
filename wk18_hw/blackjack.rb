@@ -144,7 +144,7 @@ human_hand_sum = human_player.hand[0] + human_player.hand[1]
 computer_hand_sum = the_house.hand[0] + the_house.hand[1]
 
 puts "Your cards are #{human_player.hand[0]} and #{human_player.hand[1]} for a total score of #{human_hand_sum}." 
-puts "How much would you like to bet? The default bet is 10, and your bankroll is currently at #{human_player.bankroll}."
+puts "How much would you like to bet? The minimum bet is 10, and maximum is your bankroll balance, which is currently at #{human_player.bankroll}."
 player_bet = $stdin.gets.to_i
 puts "Computer cards are #{the_house.hand[0]} and #{the_house.hand[1]} for a total score of #{computer_hand_sum}."
 
