@@ -112,8 +112,12 @@ while play == true do
     if round > 13
         puts "no more cards available!"
         play = false
+    elsif human_player.bankroll <= 0
+        puts "You're out of money. Go home and re-think your life choices."
+        play = false
     else 
-        puts "Shuffling the deck..."
+        puts "Press any key to shuffle the deck..."
+        $stdin.gets
 deck.shuffle!
 puts "Deck shuffled!"
 
