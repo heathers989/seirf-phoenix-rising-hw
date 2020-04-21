@@ -93,7 +93,7 @@ end
 
 #set up player and computer objects
 human_player = Player.new
-print "What is your name?"
+puts "What is your name?"
 human_player.name = $stdin.gets.chomp
 human_player.bankroll = 100
 p "Welcome to blackjack, #{human_player.name}!"
@@ -144,19 +144,19 @@ human_hand_sum = human_player.hand[0] + human_player.hand[1]
 computer_hand_sum = the_house.hand[0] + the_house.hand[1]
 
 puts "Your cards are #{human_player.hand[0]} and #{human_player.hand[1]} for a total score of #{human_hand_sum}." 
-# print "How much would you like to bet? The default bet is 10, and your bankroll is currently at #{human_player.bankroll}."
-# player_bet = $stdin.gets.chomp
+puts "How much would you like to bet? The default bet is 10, and your bankroll is currently at #{human_player.bankroll}."
+player_bet = $stdin.gets.to_i
 puts "Computer cards are #{the_house.hand[0]} and #{the_house.hand[1]} for a total score of #{computer_hand_sum}."
 
 if human_hand_sum == computer_hand_sum
     puts "It is a tie! No bankrolls were affected."
 elsif human_hand_sum > computer_hand_sum || computer_hand_sum > 21
-    the_house.bankroll -= 10
-    human_player.bankroll += 10
+    the_house.bankroll -= player_bet
+    human_player.bankroll += player_bet
     puts "Congratulations #{human_player.name}, you win! Your bankroll is now #{human_player.bankroll}."
 elsif computer_hand_sum > human_hand_sum || human_hand_sum > 21
-    the_house.bankroll += 10
-    human_player.bankroll -= 10
+    the_house.bankroll += player_bet
+    human_player.bankroll -= player_bet
     puts "Sorry, you lose. Your bankroll is now #{human_player.bankroll}."
 end
 puts "Game over."
