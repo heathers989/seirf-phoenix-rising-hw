@@ -109,7 +109,11 @@ play = true
 while play == true do
     round +=1
 
-puts "Shuffling the deck..."
+    if round > 13
+        puts "no more cards available!"
+        play = false
+    else 
+        puts "Shuffling the deck..."
 deck.shuffle!
 puts "Deck shuffled!"
 
@@ -155,12 +159,8 @@ if play_again == 'd'
         play_again == 'q'
         play = false
         p "thanks for playing!"
+        end
     end
-
-if round >= 14
-    puts "no more cards available!"
-    play = false
-end
 end
 
 
