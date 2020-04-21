@@ -109,15 +109,18 @@ play = true
 while play == true do
     round +=1
 
-    if round > 13
-        puts "no more cards available!"
-        play = false
-    elsif human_player.bankroll <= 0
-        puts "You're out of money. Go home and re-think your life choices."
-        play = false
-    else 
-        puts "Press any key to shuffle the deck..."
-        $stdin.gets
+if round > 13
+    puts "no more cards available!"
+    play = false
+end
+
+if human_player.bankroll <= 0
+    puts "You're out of money. Go home and rethink your life choices."
+    play = false
+end
+
+puts "Press any key to shuffle the deck..."
+$stdin.gets
 deck.shuffle!
 puts "Deck shuffled!"
 
@@ -141,10 +144,12 @@ human_hand_sum = human_player.hand[0] + human_player.hand[1]
 computer_hand_sum = the_house.hand[0] + the_house.hand[1]
 
 puts "Your cards are #{human_player.hand[0]} and #{human_player.hand[1]} for a total score of #{human_hand_sum}." 
+# print "How much would you like to bet? The default bet is 10, and your bankroll is currently at #{human_player.bankroll}."
+# player_bet = $stdin.gets.chomp
 puts "Computer cards are #{the_house.hand[0]} and #{the_house.hand[1]} for a total score of #{computer_hand_sum}."
 
 if human_hand_sum == computer_hand_sum
-    puts "It is a tie!"
+    puts "It is a tie! No bankrolls were affected."
 elsif human_hand_sum > computer_hand_sum || computer_hand_sum > 21
     the_house.bankroll -= 10
     human_player.bankroll += 10
@@ -159,12 +164,14 @@ puts "do you want to play another hand? type 'd' for deal and 'q' for quit."
 play_again = $stdin.gets.chomp
 if play_again == 'd'
     play = true
+    human_player.hand.clear
+    the_house.hand.clear
     elsif 
         play_again == 'q'
         play = false
         p "thanks for playing!"
-        end
     end
+
 end
 
 
