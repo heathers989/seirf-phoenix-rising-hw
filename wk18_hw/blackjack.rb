@@ -115,11 +115,13 @@ while play == true do
     if round > 13
         puts "no more cards available!"
         play = false
+        break
     end
 
     if human_player.bankroll <= 0
         puts "You're out of money. Go home and rethink your life choices."
         play = false
+        break
     end
 
     puts "Press b to see your bankroll balance, or press the return key to continue."
