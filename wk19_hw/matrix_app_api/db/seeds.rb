@@ -12,3 +12,8 @@ Character.create([
 	{ name: "Morpheus", description: "Captain of the Nebuchadnezzar" },
 	{ name: "Agent Smith", description: "Main antagonist of the trilogy" },
 ])
+
+Vehicle.create([
+    {name: "Nebuchadnezzar",
+     style: "Spaceship"}
+])
