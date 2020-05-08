@@ -10,7 +10,7 @@ User.create([
         "name": "Ryan Gosling",
         "starsign": "Scorpio",
         "age": 35,
-        "img": "http://coolspotters.com/files/photos/591533/ryan-gosling-large.jpg?1357449177",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ5IeXloSESBeCQK_sUxLaOPhUwcDgc7XRq1dAAcIuUSwyBVezj&usqp=CAU",
         "ltl": true
     },
     {
