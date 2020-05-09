@@ -1,9 +1,24 @@
 import React, { Component } from 'react';
 import Daters from './components/Daters.js'
+import Footer from './components/Footer'
 // import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+
+
+  handleAdd = (event, formInputs) => {
+    event.preventDefault()
+    fetch('http://localhost:3000/users', {
+      body: JSON.stringify(formInputs),
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      }
+    })
+  }
+
   render(){
     return (
       <div className="App">
@@ -11,6 +26,7 @@ class App extends Component {
         <div className="hg-body">
         <Daters />
         </div>
+       <Footer handleSubmit={this.handleAdd}/>
       </div>
     )
   }
