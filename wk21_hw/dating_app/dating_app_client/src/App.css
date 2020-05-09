@@ -1,8 +1,31 @@
-.App {
+
+body {
+  background-image: url('http://getwallpapers.com/wallpaper/full/2/a/3/444380.jpg');
+  background-repeat: none;
+  background-position: center;
+  background-size: cover;
+  font-family: 'Caveat', cursive;
+}
+
+#root {
   text-align: center;
   display: flex;
   flex-direction: column;
+  /* color: white; */
+  padding-bottom: 200px;
+  background-color: rgba(248, 244, 244, 0.30);
+  
 }
+
+.center{
+  font-size: xx-large;
+  font-style: italic;
+}
+
+h1 {
+  font-size: 50px;
+}
+
 
 .hg-body {
   display: flex;
@@ -13,16 +36,6 @@
   flex: 1
 }
 
-/* .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-} */
 
 .App-link {
   color: #61dafb;
@@ -36,6 +49,7 @@
 .dater {
   display: flex;
   text-align: left;
+  margin-bottom: 15px;
 }
 
 .left, .right {
@@ -43,12 +57,26 @@
   max-width: max-content;
   /* flex: 0 0 12em; */
   padding: 5px;
+  color: black;
 }
 
 .left {
   order: -1
 }
 
-/* .right {
-  justify-content: flex-end;
-} */
+.datermid {
+  border: 2px solid magenta;
+  display: inline-block;
+  padding: 20px;
+  margin-top: 30px;
+}
+
+h2, h3 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  
+}
+
+button {
+  height: 40px;
+}
